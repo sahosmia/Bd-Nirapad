@@ -1,0 +1,152 @@
+[26-Nov-2023 11:25:32 Asia/Dhaka] PHP Fatal error:  Cannot redeclare App\Http\Controllers\BackEndController::mobile_recharge_submit() in /home/nexroxco/public_html/app/Http/Controllers/BackEndController.php on line 1144
+[26-Nov-2023 11:27:08 Asia/Dhaka] PHP Fatal error:  Cannot redeclare App\Http\Controllers\BackEndController::mobile_recharge_submit() in /home/nexroxco/public_html/app/Http/Controllers/BackEndController.php on line 1144
+[26-Nov-2023 11:27:15 Asia/Dhaka] PHP Fatal error:  Cannot redeclare App\Http\Controllers\BackEndController::mobile_recharge_submit() in /home/nexroxco/public_html/app/Http/Controllers/BackEndController.php on line 1144
+[26-Nov-2023 11:27:37 Asia/Dhaka] PHP Fatal error:  Cannot redeclare App\Http\Controllers\BackEndController::mobile_recharge_submit() in /home/nexroxco/public_html/app/Http/Controllers/BackEndController.php on line 1144
+[26-Nov-2023 11:45:46 Asia/Dhaka] PHP Fatal error:  Cannot redeclare App\Http\Controllers\BackEndController::mobile_recharge_submit() in /home/nexroxco/public_html/app/Http/Controllers/BackEndController.php on line 1144
+[26-Nov-2023 11:45:46 Asia/Dhaka] PHP Fatal error:  Cannot redeclare App\Http\Controllers\BackEndController::mobile_recharge_submit() in /home/nexroxco/public_html/app/Http/Controllers/BackEndController.php on line 1144
+[26-Nov-2023 11:48:32 Asia/Dhaka] PHP Fatal error:  Cannot redeclare App\Http\Controllers\BackEndController::mobile_recharge_submit() in /home/nexroxco/public_html/app/Http/Controllers/BackEndController.php on line 1144
+[01-Dec-2023 19:57:47 Asia/Dhaka] PHP Fatal error:  During class fetch: Uncaught ErrorException: include(): Read of 16114 bytes failed with errno=12 Cannot allocate memory in /home/nexroxco/public_html/vendor/composer/ClassLoader.php:582
+Stack trace:
+#0 /home/nexroxco/public_html/vendor/composer/ClassLoader.php(582): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'include(): Read...', '/home/nexroxco/...', 582)
+#1 /home/nexroxco/public_html/vendor/composer/ClassLoader.php(582): include()
+#2 /home/nexroxco/public_html/vendor/composer/ClassLoader.php(433): Composer\Autoload\{closure}('/home/nexroxco/...')
+#3 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#4 /home/nexroxco/public_html/vendor/composer/ClassLoader.php(582): include('/home/nexroxco/...')
+#5 /home/nexroxco/public_html/vendor/composer/ClassLoader.php(433): Composer\Autoload\{closure}('/home/nexroxco/...')
+#6 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(89): collect(Array)
+#8 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(78): Illuminate\Foundation\PackageManifest->config('aliases')
+#9 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterFacades.php(26): Illuminate\Foundation\PackageManifest->aliases()
+#10 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\Foundation\Bootstrap\RegisterFacades->bootstrap(Object(Illuminate\Foundation\Application))
+#11 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(153): Illuminate\Foundation\Application->bootstrapWith(Array)
+#12 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(137): Illuminate\Foundation\Http\Kernel->bootstrap()
+#13 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(111): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#14 /home/nexroxco/public_html/index.php(52): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#15 {main} in /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Collections/Collection.php on line 12
+[04-Dec-2023 10:46:07 Asia/Dhaka] PHP Fatal error:  Cannot redeclare App\Http\Controllers\BackEndController::credit_request() in /home/nexroxco/public_html/app/Http/Controllers/BackEndController.php on line 1341
+[04-Dec-2023 10:47:05 Asia/Dhaka] PHP Fatal error:  Cannot redeclare App\Http\Controllers\BackEndController::credit_request() in /home/nexroxco/public_html/app/Http/Controllers/BackEndController.php on line 1341
+[09-Dec-2023 17:36:56 Asia/Dhaka] PHP Fatal error:  Uncaught ErrorException: include(): Read of 824 bytes failed with errno=12 Cannot allocate memory in /home/nexroxco/public_html/vendor/composer/ClassLoader.php:582
+Stack trace:
+#0 /home/nexroxco/public_html/vendor/composer/ClassLoader.php(582): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'include(): Read...', '/home/nexroxco/...', 582)
+#1 /home/nexroxco/public_html/vendor/composer/ClassLoader.php(582): include()
+#2 /home/nexroxco/public_html/vendor/composer/ClassLoader.php(433): Composer\Autoload\{closure}('/home/nexroxco/...')
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Exceptions\\...')
+#4 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(877): ReflectionClass->__construct('App\\Exceptions\\...')
+#5 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build('App\\Exceptions\\...')
+#6 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve('App\\Exceptions\\...', Array, false)
+#7 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(296): Illuminate\Foundation\Application->resolve('App\\Exceptions\\...', Array, false)
+#8 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(873): Illuminate\Container\Container->Illuminate\Container\{closure}(Object(Illuminate\Foundation\Application), Array)
+#9 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build(Object(Closure))
+#10 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve('Illuminate\\Cont...', Array, true)
+#11 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve('Illuminate\\Cont...', Array)
+#12 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make('Illuminate\\Cont...', Array)
+#13 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(254): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#14 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Bootstrap\HandleExceptions->getExceptionHandler()
+#15 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(173): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse(Object(ErrorException))
+#16 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException(Object(ErrorException))
+#17 {main}
+  thrown in /home/nexroxco/public_html/vendor/composer/ClassLoader.php on line 582
+[09-Dec-2023 11:36:56 UTC] PHP Warning:  include(): Failed opening '/home/nexroxco/public_html/vendor/composer/../graham-campbell/result-type/src/Result.php' for inclusion (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/nexroxco/public_html/vendor/composer/ClassLoader.php on line 582
+[09-Dec-2023 11:36:56 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:877
+Stack trace:
+#0 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(877): ReflectionClass->__construct('config')
+#1 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build('config')
+#2 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve('config', Array, true)
+#3 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve('config', Array)
+#4 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make('config', Array)
+#5 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make('config')
+#6 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(469): Illuminate\Container\Container->offsetGet('config')
+#7 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(520): Illuminate\Log\LogManager->getDefaultDriver()
+#8 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(112): Illuminate\Log\LogManager->parseDriver(NULL)
+#9 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(590): Illuminate\Log\LogManager->driver()
+#10 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(252): Illuminate\Log\LogManager->error('Class "GrahamCa...', Array)
+#11 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(415): Illuminate\Foundation\Exceptions\Handler->report(Object(Error))
+#12 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(113): Illuminate\Foundation\Http\Kernel->reportException(Object(Error))
+#13 /home/nexroxco/public_html/index.php(52): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#14 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:879
+Stack trace:
+#0 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build('config')
+#1 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve('config', Array, true)
+#2 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve('config', Array)
+#3 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make('config', Array)
+#4 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make('config')
+#5 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(469): Illuminate\Container\Container->offsetGet('config')
+#6 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(520): Illuminate\Log\LogManager->getDefaultDriver()
+#7 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(112): Illuminate\Log\LogManager->parseDriver(NULL)
+#8 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(590): Illuminate\Log\LogManager->driver()
+#9 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(252): Illuminate\Log\LogManager->error('Class "GrahamCa...', Array)
+#10 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(415): Illuminate\Foundation\Exceptions\Handler->report(Object(Error))
+#11 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(113): Illuminate\Foundation\Http\Kernel->reportException(Object(Error))
+#12 /home/nexroxco/public_html/index.php(52): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#13 {main}
+  thrown in /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 879
+[09-Dec-2023 17:37:39 Asia/Dhaka] PHP Fatal error:  During class fetch: Uncaught ErrorException: include(): Read of 1090 bytes failed with errno=12 Cannot allocate memory in /home/nexroxco/public_html/vendor/composer/ClassLoader.php:582
+Stack trace:
+#0 /home/nexroxco/public_html/vendor/composer/ClassLoader.php(582): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'include(): Read...', '/home/nexroxco/...', 582)
+#1 /home/nexroxco/public_html/vendor/composer/ClassLoader.php(582): include()
+#2 /home/nexroxco/public_html/vendor/composer/ClassLoader.php(433): Composer\Autoload\{closure}('/home/nexroxco/...')
+#3 /home/nexroxco/public_html/vendor/nesbot/carbon/src/Carbon/Traits/Mutability.php(22): Composer\Autoload\ClassLoader->loadClass('Carbon\\Traits\\C...')
+#4 /home/nexroxco/public_html/vendor/composer/ClassLoader.php(582): include('/home/nexroxco/...')
+#5 /home/nexroxco/public_html/vendor/composer/ClassLoader.php(433): Composer\Autoload\{closure}('/home/nexroxco/...')
+#6 /home/nexroxco/public_html/vendor/nesbot/carbon/src/Carbon/Traits/Date.php(527): Composer\Autoload\ClassLoader->loadClass('Carbon\\Traits\\M...')
+#7 /home/nexroxco/public_html/vendor/composer/ClassLoader.php(582): include('/home/nexroxco/...')
+#8 /home/nexroxco/public_html/vendor/composer/ClassLoader.php(433): Composer\Autoload\{closure}('/home/nexroxco/...')
+#9 /home/nexroxco/public_html/vendor/nesbot/carbon/src/Carbon/Carbon.php(510): Composer\Autoload\ClassLoader->loadClass('Carbon\\Traits\\D...')
+#10 /home/nexroxco/public_html/vendor/composer/ClassLoader.php(582): include('/home/nexroxco/...')
+#11 /home/nexroxco/public_html/vendor/composer/ClassLoader.php(433): Composer\Autoload\{closure}('/home/nexroxco/...')
+#12 /home/nexroxco/public_html/vendor/nesbot/carbon/src/Carbon/Laravel/ServiceProvider.php(69): Composer\Autoload\ClassLoader->loadClass('Carbon\\Carbon')
+#13 /home/nexroxco/public_html/vendor/nesbot/carbon/src/Carbon/Laravel/ServiceProvider.php(45): Carbon\Laravel\ServiceProvider->updateLocale()
+#14 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Carbon\Laravel\ServiceProvider->boot()
+#15 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#16 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\Container\Util::unwrapIfClosure(Object(Closure))
+#17 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#18 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#19 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(924): Illuminate\Container\Container->call(Array)
+#20 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(905): Illuminate\Foundation\Application->bootProvider(Object(Carbon\Laravel\ServiceProvider))
+#21 [internal function]: Illuminate\Foundation\Application->Illuminate\Foundation\{closure}(Object(Carbon\Laravel\ServiceProvider), 22)
+#22 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(906): array_walk(Array, Object(Closure))
+#23 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\Foundation\Application->boot()
+#24 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\Foundation\Bootstrap\BootProviders->bootstrap(Object(Illuminate\Foundation\Application))
+#25 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(153): Illuminate\Foundation\Application->bootstrapWith(Array)
+#26 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(137): Illuminate\Foundation\Http\Kernel->bootstrap()
+#27 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(111): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#28 /home/nexroxco/public_html/index.php(52): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#29 {main} in /home/nexroxco/public_html/vendor/nesbot/carbon/src/Carbon/Traits/Mutability.php on line 22
+[09-Dec-2023 11:37:39 UTC] PHP Warning:  include(): Failed opening '/home/nexroxco/public_html/vendor/composer/../laravel/framework/src/Illuminate/Config/Repository.php' for inclusion (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/nexroxco/public_html/vendor/composer/ClassLoader.php on line 582
+[09-Dec-2023 11:37:40 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:877
+Stack trace:
+#0 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(877): ReflectionClass->__construct('config')
+#1 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build('config')
+#2 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve('config', Array, true)
+#3 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve('config', Array)
+#4 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make('config', Array)
+#5 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make('config')
+#6 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(469): Illuminate\Container\Container->offsetGet('config')
+#7 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(520): Illuminate\Log\LogManager->getDefaultDriver()
+#8 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(112): Illuminate\Log\LogManager->parseDriver(NULL)
+#9 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(590): Illuminate\Log\LogManager->driver()
+#10 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(252): Illuminate\Log\LogManager->error('Class "Illumina...', Array)
+#11 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(415): Illuminate\Foundation\Exceptions\Handler->report(Object(Error))
+#12 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(113): Illuminate\Foundation\Http\Kernel->reportException(Object(Error))
+#13 /home/nexroxco/public_html/index.php(52): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#14 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:879
+Stack trace:
+#0 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\Container\Container->build('config')
+#1 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(851): Illuminate\Container\Container->resolve('config', Array, true)
+#2 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(694): Illuminate\Foundation\Application->resolve('config', Array)
+#3 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(836): Illuminate\Container\Container->make('config', Array)
+#4 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1419): Illuminate\Foundation\Application->make('config')
+#5 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(469): Illuminate\Container\Container->offsetGet('config')
+#6 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(520): Illuminate\Log\LogManager->getDefaultDriver()
+#7 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(112): Illuminate\Log\LogManager->parseDriver(NULL)
+#8 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(590): Illuminate\Log\LogManager->driver()
+#9 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(252): Illuminate\Log\LogManager->error('Class "Illumina...', Array)
+#10 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(415): Illuminate\Foundation\Exceptions\Handler->report(Object(Error))
+#11 /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(113): Illuminate\Foundation\Http\Kernel->reportException(Object(Error))
+#12 /home/nexroxco/public_html/index.php(52): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#13 {main}
+  thrown in /home/nexroxco/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 879
