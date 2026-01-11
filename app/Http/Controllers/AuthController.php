@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends BaseController
 {
-    public function index()
+    public function create()
     {
         if(Auth::check()){
             return redirect('/dashboard/home');
@@ -19,87 +19,47 @@ class AuthController extends BaseController
         }
     }
 
-    public function login_submit(Request $request)
+    public function store(Request $request)
     {
-        if (isset($request->email)) {
-            $findemail = User::where('email', $request->email)->first();
-            if (isset($findemail->id)) {
-                if ($findemail->status == 1) {
-                    if (Hash::check($request->password, $findemail->password)) {
-                        Auth::loginUsingId($findemail->id);
-                        return response()->json([
-                            "status" => "success",
-                            "message" => "Please wait we are redirecting you",
-                            "redirect" => "/dashboard/home"
-                        ]);
-                    } else {
-                        return response()->json([
-                            "status" => "danger",
-                            "message" => "Incorrect password",
-                        ]);
-                    }
-                } else {
-                    return response()->json([
-                        "status" => "warning",
-                        "message" => "Sorry! Your account is blocked. Please contact support",
-                    ]);
-                }
-            }
-            $findusername = User::where('username', $request->email)->first();
-            if (isset($findusername->id)) {
-                if ($findusername->status == 1) {
-                    if (Hash::check($request->password, $findusername->password)) {
-                        Auth::loginUsingId($findusername->id);
-                        return response()->json([
-                            "status" => "success",
-                            "message" => "Please wait we are redirecting you",
-                            "redirect" => "/dashboard/home"
-                        ]);
-                    } else {
-                        return response()->json([
-                            "status" => "danger",
-                            "message" => "Incorrect password",
-                        ]);
-                    }
-                } else {
-                    return response()->json([
-                        "status" => "warning",
-                        "message" => "Sorry! Your account is blocked. Please contact support",
-                    ]);
-                }
-            }
-            $findcontact = User::where('contact_no', $request->email)->first();
-            if (isset($findcontact->id)) {
-                if ($findcontact->status == 1) {
-                    if (Hash::check($request->password, $findcontact->password)) {
-                        Auth::loginUsingId($findcontact->id);
-                        return response()->json([
-                            "status" => "success",
-                            "message" => "Please wait we are redirecting you",
-                            "redirect" => "/dashboard/home"
-                        ]);
-                    } else {
-                        return response()->json([
-                            "status" => "danger",
-                            "message" => "Incorrect password",
-                        ]);
-                    }
-                } else {
-                    return response()->json([
-                        "status" => "warning",
-                        "message" => "Sorry! Your account is blocked. Please contact support",
-                    ]);
-                }
-            } else {
-                return response()->json([
-                    "status" => "danger",
-                    "message" => "Sorry! we cannot find any account with your details",
-                ]);
-            }
+        $credentials = $request->only('email', 'password');
+        $loginField = $credentials['email'];
+
+        $user = User::where('email', $loginField)
+            ->orWhere('username', $loginField)
+            ->orWhere('contact_no', $loginField)
+            ->first();
+
+        if (!$user) {
+            return response()->json([
+                "status" => "danger",
+                "message" => "Sorry! we cannot find any account with your details",
+            ]);
         }
+
+        if ($user->status != 1) {
+            return response()->json([
+                "status" => "warning",
+                "message" => "Sorry! Your account is blocked. Please contact support",
+            ]);
+        }
+
+        if (!Hash::check($credentials['password'], $user->password)) {
+            return response()->json([
+                "status" => "danger",
+                "message" => "Incorrect password",
+            ]);
+        }
+
+        Auth::login($user);
+
+        return response()->json([
+            "status" => "success",
+            "message" => "Please wait we are redirecting you",
+            "redirect" => "/dashboard/home"
+        ]);
     }
 
-    public function logout()
+    public function destroy()
     {
         Auth::logout();
         return redirect('/');

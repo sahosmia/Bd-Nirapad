@@ -10,7 +10,7 @@ use App\Models\Report;
 class DashboardController extends BaseController
 {
 
-    public function dashboard()
+    public function index()
     {
         $view = 'dashboard';
         $user = $this->login_check();

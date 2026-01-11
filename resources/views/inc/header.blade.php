@@ -74,14 +74,6 @@
              @endif
              <!--<li class="nav-item d-lg-block"><a class="nav-link nav-link-style modes"><i class="ficon" data-feather="moon"></i></a></li>-->
 
-             @php
-                 use App\Models\Notification;
-
-                 $notifications = Notification::where('recievers_user_id', $user->id)
-                     ->take(10)
-                     ->get();
-             @endphp
-
              <li class="nav-item d-flex align-items-center justify-content-center notification-section">
                  <div class="px-1 position-relative">
                      <i id="notification-icon" onclick="toggleNotificationCard()"

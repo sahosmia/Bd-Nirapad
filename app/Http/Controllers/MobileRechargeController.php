@@ -17,7 +17,7 @@ use TCG\Voyager\Models\Role;
 class MobileRechargeController extends BaseController
 {
 
-    public function mobile_recharge()
+    public function create()
     {
         $view = 'mobile-recharge';
         $roles = Role::where('id', '!=', 1)->get();
@@ -46,7 +46,7 @@ class MobileRechargeController extends BaseController
         }
     }
 
-    public function mobile_recharge_submit(Request $request)
+    public function store(Request $request)
     {
         $user = $this->login_check();
         $master_partner = $this->get_master_partner();
@@ -108,7 +108,7 @@ class MobileRechargeController extends BaseController
         }
     }
 
-    public function mobile_recharge_request(Request $request)
+    public function index(Request $request)
     {
         $view = 'mobile-recharge-request';
         $roles = Role::where('id', '!=', 1)->get();
@@ -156,9 +156,9 @@ class MobileRechargeController extends BaseController
         return view($view, compact('user', 'roles', 'allrequest', 'operator'));
     }
 
-    public function mobile_recharge_request_update(Request $request)
+    public function update(Request $request, $id)
     {
-        $mobilerecharge = MobileRecharge::find($request->id);
+        $mobilerecharge = MobileRecharge::find($id);
         $user = User::find($mobilerecharge->user_id);
         $master_partner = $this->get_master_partner();
         if ($master_partner->pin == $request->pin) {
@@ -172,7 +172,7 @@ class MobileRechargeController extends BaseController
 
                         $mobilerecharge->save();
 
-                        $reports = Report::where('bank_request_id', $request->id)->where('form', 3)->first();
+                        $reports = Report::where('bank_request_id', $id)->where('form', 3)->first();
                         if (isset($reports)) {
                             $reports->type = $request->status;
                             $reports->updated_credits = $user->credits;
@@ -202,7 +202,7 @@ class MobileRechargeController extends BaseController
                     $mobilerecharge->comment = $request->comment;
                     $mobilerecharge->save();
 
-                    $reports = Report::where('bank_request_id', $request->id)->where('form', 3)->first();
+                    $reports = Report::where('bank_request_id', $id)->where('form', 3)->first();
                     if (isset($reports)) {
                         $reports->updated_credits = $user->credits + $reports->amount;
                         $reports->recievers_user_previous_credits = $master_partner->credits;

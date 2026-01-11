@@ -14,7 +14,7 @@ use TCG\Voyager\Models\Role;
 class ReportController extends BaseController
 {
 
-    public function all_reports(Request $request, $refkey)
+    public function index(Request $request, $refkey)
     {
         $view = 'all-reports';
         $roles = $this->roles();
@@ -88,7 +88,7 @@ class ReportController extends BaseController
         return view("all-reports", compact('user', 'allreports', 'roles', 'level', 'form', 'allusers', 'success', 'refunded', 'pending'));
     }
 
-    public function reports($refkey)
+    public function show($refkey)
     {
         $view = 'reports';
         $roles = $this->roles();

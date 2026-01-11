@@ -15,7 +15,7 @@ use TCG\Voyager\Models\Role;
 class MobileBankingController extends BaseController
 {
 
-    public function mobile_banking()
+    public function create()
     {
         $roles = Role::where('id', '!=', 1)->get();
         $user = $this->login_check();
@@ -23,7 +23,7 @@ class MobileBankingController extends BaseController
         return view("mobile-banking", compact('user', 'roles', 'services'));
     }
 
-     public function mobile_banking_submit(Request $request)
+     public function store(Request $request)
     {
         $user = $this->login_check();
         $getpartner = User::find($user->partner_id);
@@ -90,7 +90,7 @@ class MobileBankingController extends BaseController
         }
     }
 
-    public function mobile_banking_request(Request $request, $refkey)
+    public function index(Request $request)
     {
         $view = 'mobile-banking-requests';
         $roles = Role::where('id', '!=', 1)->get();
@@ -139,9 +139,9 @@ class MobileBankingController extends BaseController
     }
 
 
-    public function mobile_banking_request_update(Request $request)
+    public function update(Request $request, $id)
     {
-        $mobilebankingrequest = MobileBankingRequest::find($request->id);
+        $mobilebankingrequest = MobileBankingRequest::find($id);
         $requested_user = User::find($mobilebankingrequest->user_id);
         $partner = User::find($mobilebankingrequest->partner_id);
         if ($partner->pin == $request->pin) {
@@ -156,7 +156,7 @@ class MobileBankingController extends BaseController
                         $mobilebankingrequest->recivers_user_previous_credits = $partner->credits;
                         $mobilebankingrequest->save();
 
-                        $reports = Report::where('bank_request_id', $request->id)->where('form', 2)->first();
+                        $reports = Report::where('bank_request_id', $id)->where('form', 2)->first();
                         if (isset($reports)) {
                             $reports->type = $request->status;
                             $reports->updated_credits = $requested_user->credits;
@@ -188,7 +188,7 @@ class MobileBankingController extends BaseController
                     $mobilebankingrequest->digits = $request->digits;
                     $mobilebankingrequest->save();
 
-                    $reports = Report::where('bank_request_id', $request->id)->where('form', 2)->first();
+                    $reports = Report::where('bank_request_id', $id)->where('form', 2)->first();
                     if (isset($reports)) {
                         $reports->updated_credits = $requested_user->credits + $reports->amount;
                         $reports->recievers_user_previous_credits = $partner->credits;

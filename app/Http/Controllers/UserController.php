@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends BaseController
 {
 
-    public function users(Request $request, $refkey)
+    public function index(Request $request, $refkey)
     {
         $view = 'users';
         $user = $this->login_check();
@@ -141,7 +141,7 @@ class UserController extends BaseController
         }
     }
 
-    public function user_submit(Request $request)
+    public function store(Request $request)
     {
         $user = new User();
         $user->name = $request->name;

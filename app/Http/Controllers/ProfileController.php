@@ -56,7 +56,7 @@ class ProfileController extends BaseController
         }
     }
 
-    public function profile(Request $request)
+    public function show(Request $request)
     {
         $view = 'profile';
         $roles = Role::where('id', '!=', 1)->get();
@@ -64,7 +64,7 @@ class ProfileController extends BaseController
         return view($view, compact('user', 'roles'));
     }
 
-    public function profile_update_submit(Request $request)
+    public function update(Request $request)
     {
         $user = $this->login_check();
         if (isset($request->name)) {

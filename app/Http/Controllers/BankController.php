@@ -18,7 +18,7 @@ use TCG\Voyager\Models\Role;
 class BankController extends BaseController
 {
 
-    public function bank()
+    public function create()
     {
         $view = 'bank-form';
         $roles = $this->roles();
@@ -27,7 +27,7 @@ class BankController extends BaseController
         return view("bank-form", compact('user', 'banks', 'roles'));
     }
 
-    public function bank_districts($id)
+    public function getDistricts($id)
     {
         $bankdistricts = BankDistrict::where('bank_id', $id)->where('status', 1)->get();
         if ($bankdistricts->count() > 0) {
@@ -43,7 +43,7 @@ class BankController extends BaseController
         }
     }
 
-    public function bank_branches($id)
+    public function getBranches($id)
     {
         $bankbranches = BankBranchName::where('bank_district_id', $id)->where('status', 1)->get();
         if ($bankbranches->count() > 0) {
@@ -59,7 +59,7 @@ class BankController extends BaseController
         }
     }
 
-    public function bank_request_submit(Request $request)
+    public function store(Request $request)
     {
         $user = $this->login_check();
         $master_partner = $this->get_master_partner();
@@ -115,7 +115,7 @@ class BankController extends BaseController
     }
 
     // bank request list page
-    public function requests(Request $request, $refkey)
+    public function index(Request $request, $refkey)
     {
         $roles = $this->roles();
         $user = $this->login_check();
@@ -157,10 +157,10 @@ class BankController extends BaseController
         return view("all-requests", compact('user', 'allrequests', 'roles', 'level', 'bank'));
     }
 
-      public function ban_request_update(Request $request)
+      public function update(Request $request, $id)
     {
         $master_partner = $this->login_check();
-        $bankrequest = BankRequest::find($request->id);
+        $bankrequest = BankRequest::find($id);
         $sender = User::findOrFail($bankrequest->user_id);
 
         if (
@@ -178,7 +178,7 @@ class BankController extends BaseController
                         $bankrequest->recivers_user_previous_credits = $master_partner->credits;
                         $bankrequest->save();
 
-                        $reports = Report::where('bank_request_id', $request->id)->where('form', 1)->first();
+                        $reports = Report::where('bank_request_id', $id)->where('form', 1)->first();
                         if (isset($reports)) {
                             $reports->type = $request->status;
                             $reports->updated_credits = $sender->credits;
@@ -192,7 +192,7 @@ class BankController extends BaseController
                         }
                         $master_partner->credits = $master_partner->credits - $bankrequest->amount;
                         $master_partner->save();
-                        $this->notification(2, $bankrequest->amount, $master_partner->id, $request->id);
+                        $this->notification(2, $bankrequest->amount, $master_partner->id, $id);
                     }
                     return response()->json([
                         "status" => "success",
@@ -213,7 +213,7 @@ class BankController extends BaseController
                     $bankrequest->comment = $request->comment;
                     $bankrequest->save();
 
-                    $reports = Report::where('bank_request_id', $request->id)->where('form', 1)->first();
+                    $reports = Report::where('bank_request_id', $id)->where('form', 1)->first();
                     if (isset($reports)) {
                         $reports->updated_credits =
                             $sender->credits + $reports->amount;

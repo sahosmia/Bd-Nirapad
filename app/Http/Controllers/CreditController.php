@@ -12,7 +12,7 @@ use TCG\Voyager\Models\Role;
 class CreditController extends BaseController
 {
 
-    public function add_credit(Request $request)
+    public function store(Request $request)
     {
         $user = $this->login_check();
         if ($user->pin == $request->pin) {
@@ -62,7 +62,7 @@ class CreditController extends BaseController
         }
     }
 
-    public function refund_credit(Request $request)
+    public function refund(Request $request)
     {
         $user = $this->login_check();
         if ($user->pin == $request->pin) {
@@ -114,7 +114,7 @@ class CreditController extends BaseController
         }
     }
 
-    public function credit_request(Request $request)
+    public function index(Request $request)
     {
         $roles = Role::where('id', '!=', 1)->get();
         $user = $this->login_check();
