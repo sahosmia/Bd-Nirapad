@@ -103,7 +103,7 @@
                             <div class="card-body statistics-body">
                                 <div class="row">
                                     <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0 ">
-                                        <a href="{{ route('all_reports', $user->ref_key) }}">
+                                        <a href="{{ route('reports.index', $user->ref_key) }}">
                                             <div class="media bg-primary">
                                                 <div class="avatar bg-light-info mr-2">
                                                     <div class="avatar-content">
@@ -126,7 +126,7 @@
                                     </div>
 
                                     <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
-                                        <a href="{{ route('all_reports', $user->ref_key) }}?status=1">
+                                        <a href="{{ route('reports.index', $user->ref_key) }}?status=1">
                                             <div class="media bg-primary">
                                                 <div class="avatar bg-light-info mr-2">
                                                     <div class="avatar-content">
@@ -154,7 +154,7 @@
                                     </div>
 
                                     <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
-                                        <a href="{{ route('all_reports', $user->ref_key) }}?status=3">
+                                        <a href="{{ route('reports.index', $user->ref_key) }}?status=3">
                                             <div class="media bg-primary">
                                                 <div class="avatar bg-light-info mr-2">
                                                     <div class="avatar-content">
@@ -178,7 +178,7 @@
                                     </div>
 
                                     <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-sm-0">
-                                        <a href="{{ route('all_reports', $user->ref_key) }}?status=2">
+                                        <a href="{{ route('reports.index', $user->ref_key) }}?status=2">
                                             <div class="media bg-primary">
                                                 <div class="avatar bg-light-info mr-2">
                                                     <div class="avatar-content">

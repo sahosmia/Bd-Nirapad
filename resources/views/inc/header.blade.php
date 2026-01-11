@@ -139,14 +139,14 @@
                                  class="avatar-status-online"></span></span>
                      </a>
                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user">
-                         <a class="dropdown-item" href="{{ route('profile') }}"><i class="mr-50"
+                         <a class="dropdown-item" href="{{ route('profile.show') }}"><i class="mr-50"
                                  data-feather="user"></i>
                              Profile</a>
                          {{-- @if ($user->role_id != 4) --}}
                          <div class="dropdown-divider"></div><a class="dropdown-item"
-                             href="{{ route('change_password') }}"><i class="fa-light fa-lock mr-50"></i>Password</a>
+                             href="{{ route('profile.change-password') }}"><i class="fa-light fa-lock mr-50"></i>Password</a>
                          <div class="dropdown-divider"></div><a class="dropdown-item"
-                             href="{{ route('change_pin') }}"><i class="fa-light fa-key mr-50"></i>Pin</a>
+                             href="{{ route('profile.change-pin') }}"><i class="fa-light fa-key mr-50"></i>Pin</a>
                          {{-- @endif --}}
                          <div class="dropdown-divider"></div><a class="dropdown-item" href="{{ route('logout') }}"><i
                                  class="mr-50" data-feather="power"></i> Logout</a>
