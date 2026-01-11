@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
-use App\Level;
+use App\Models\Level;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Traits\RefKey;
-use App\Report;
+use App\Models\Report;
 
 
 class User extends \TCG\Voyager\Models\User

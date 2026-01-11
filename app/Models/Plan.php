@@ -1,11 +1,11 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 
-class BankDistrict extends Model
+class Plan extends Model
 {
     
 }

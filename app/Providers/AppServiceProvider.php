@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Notification;
+use App\Models\Notification;
 use Illuminate\Support\Facades\Auth;
 
 class AppServiceProvider extends ServiceProvider

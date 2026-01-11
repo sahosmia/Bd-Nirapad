@@ -5,7 +5,7 @@ $page  = explode("/", $_SERVER['REQUEST_URI'])[2];
 <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">
-            <li class="nav-item mr-auto"><a class="navbar-brand" href="{{route('dashboard')}}">
+            <li class="nav-item mr-auto"><a class="navbar-brand" href="{{route('dashboard.index')}}">
                 <span class="brand-logo">
                     <img width="100%" src="{{url('storage')}}/{{setting('site.logo')}}">
                 </span>
@@ -18,14 +18,14 @@ $page  = explode("/", $_SERVER['REQUEST_URI'])[2];
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
             <li class=" nav-item d-md-none d-block active pb-1"><a class="d-flex align-items-center"><span class="menu-title text-truncate" data-i18n="Dashboards">Credits : @if($user->role_id == 1 || $user->role_id == 2) Unlimited @else {{$user->credits}} @endif</span></a></li>
-            <li class=" nav-item @if($page == "home") active @endif"><a class="d-flex align-items-center" href="{{route('dashboard')}}"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboard</span></a></li>
+            <li class=" nav-item @if($page == "home") active @endif"><a class="d-flex align-items-center" href="{{route('dashboard.index')}}"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboard</span></a></li>
             @if($user->role_id != 4 && $user->level != 1 && $user->role_id != 5 && $user->role_id != 6)
-                <li class=" nav-item @if($page == "users") active @endif"><a class="d-flex align-items-center" href="{{route('users',$user->ref_key)}}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Users</span></a></li>
+                <li class=" nav-item @if($page == "users") active @endif"><a class="d-flex align-items-center" href="{{route('users.index',$user->ref_key)}}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Users</span></a></li>
             @elseif($user->role_id == 4 && $user->level != 1)
-                <li class=" nav-item @if($page == "users") active @endif"><a class="d-flex align-items-center" href="{{route('users',$user->ref_key)}}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Users</span></a></li>
+                <li class=" nav-item @if($page == "users") active @endif"><a class="d-flex align-items-center" href="{{route('users.index',$user->ref_key)}}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Users</span></a></li>
             @endif
-            <li class=" nav-item @yield("credit-request")"><a class="d-flex align-items-center" href="{{route('credit_request')}}"><i class="fa-regular fa-dollar-sign"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Credit Logs</span></a></li>
-            <li class=" nav-item @if($page == "all-reports") active @endif"><a class="d-flex align-items-center" href="{{route('all_reports',$user->ref_key)}}"><i class="fa-regular fa-rectangle-history"></i><span class="menu-title text-truncate" data-i18n="Dashboards">All Reports</span></a></li>
+            <li class=" nav-item @yield("credit-request")"><a class="d-flex align-items-center" href="{{route('credits.index')}}"><i class="fa-regular fa-dollar-sign"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Credit Logs</span></a></li>
+            <li class=" nav-item @if($page == "all-reports") active @endif"><a class="d-flex align-items-center" href="{{route('reports.index',$user->ref_key)}}"><i class="fa-regular fa-rectangle-history"></i><span class="menu-title text-truncate" data-i18n="Dashboards">All Reports</span></a></li>
             <!--@if($user->role_id != 5)-->
             <!--    <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i class="fa-regular fa-rectangle-history"></i><span class="menu-title text-truncate" data-i18n="Invoice">Reports</span></a>-->
             <!--        <ul class="menu-content">-->
@@ -42,14 +42,14 @@ $page  = explode("/", $_SERVER['REQUEST_URI'])[2];
                     <ul class="menu-content">
                         @if ($user->role_id == 1 || $user->role_id == 3 || $user->role_id == 4)
                             <li class="nav-item @if ($page == 'bank') active @endif"><a
-                                    class="d-flex align-items-center" href="{{ route('bank') }}"><span
+                                    class="d-flex align-items-center" href="{{ route('banks.create') }}"><span
                                         class="menu-title text-truncate" data-i18n="Dashboards">New Request</span></a>
                             </li>
                         @endif
                         @if ($user->role_id == 1 || $user->role_id == 2 || $user->role_id == 3 || $user->role_id == 4 || $user->role_id == 6)
                             <li class="nav-item @if ($page == 'requests') active @endif"><a
                                     class="d-flex align-items-center"
-                                    href="{{ route('requests', $user->ref_key) }}"><span
+                                    href="{{ route('banks.index', $user->ref_key) }}"><span
                                         class="menu-title text-truncate" data-i18n="Dashboards">Requests List</span></a>
                             </li>
                         @endif
@@ -69,14 +69,14 @@ $page  = explode("/", $_SERVER['REQUEST_URI'])[2];
                     <ul class="menu-content">
                         @if ($user->role_id == 1 || $user->role_id == 3 || $user->role_id == 4)
                             <li class="nav-item @if ($page == 'mobile-banking') active @endif"><a
-                                    class="d-flex align-items-center" href="{{ route('mobile_banking') }}"><span
+                                    class="d-flex align-items-center" href="{{ route('mobile-banking.create') }}"><span
                                         class="menu-title text-truncate" data-i18n="Dashboards">New Request</span></a>
                             </li>
                         @endif
                         @if ($user->role_id == 1 || $user->role_id == 2 || $user->role_id == 3 || $user->role_id == 4 || $user->role_id == 5 || $user->role_id == 6)
                             <li class="nav-item @if ($page == 'mobile-banking-request') active @endif"><a
                                     class="d-flex align-items-center"
-                                    href="{{ route('mobile_banking_request', $user->ref_key) }}"><span
+                                    href="{{ route('mobile-banking.index', $user->ref_key) }}"><span
                                         class="menu-title text-truncate" data-i18n="Dashboards">Request
                                         List</span></a></li>
                         @endif
@@ -93,7 +93,7 @@ $page  = explode("/", $_SERVER['REQUEST_URI'])[2];
 
 
                             <li class="nav-item @if ($page == 'mobile-recharge') active @endif"><a
-                                class="d-flex align-items-center" href="{{ route('mobile_recharge') }}"><span
+                                class="d-flex align-items-center" href="{{ route('mobile-recharge.create') }}"><span
                                 class="menu-title text-truncate" data-i18n="Dashboards">New
                                 Request</span></a></li>
 
@@ -103,7 +103,7 @@ $page  = explode("/", $_SERVER['REQUEST_URI'])[2];
                         @if ($user->role_id == 1 || $user->role_id == 2 || $user->role_id == 3 || $user->role_id == 4 || $user->role_id == 6)
                             <li class="nav-item @if ($page == 'mobile-recharge-request') active @endif"><a
                                     class="d-flex align-items-center"
-                                    href="{{ route('mobile_recharge_request', $user->ref_key) }}"><span
+                                    href="{{ route('mobile-recharge.index', $user->ref_key) }}"><span
                                         class="menu-title text-truncate" data-i18n="Dashboards">Request
                                         List</span></a></li>
                         @endif

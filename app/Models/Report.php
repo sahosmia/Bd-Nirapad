@@ -1,12 +1,12 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
-use App\Bank;
-use App\Service;
-use App\Operator;
+use App\Models\Bank;
+use App\Models\Service;
+use App\Models\Operator;
 
 class Report extends Model
 {
