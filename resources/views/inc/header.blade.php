@@ -75,7 +75,7 @@
              <!--<li class="nav-item d-lg-block"><a class="nav-link nav-link-style modes"><i class="ficon" data-feather="moon"></i></a></li>-->
 
              @php
-                 use App\Notification;
+                 use App\Models\Notification;
 
                  $notifications = Notification::where('recievers_user_id', $user->id)
                      ->take(10)
